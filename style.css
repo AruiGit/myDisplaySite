@@ -1,0 +1,153 @@
+/* Defining CSS Variables for Easy Theme Management */
+:root {
+    --primary-color: #333;
+    --secondary-color: #444;
+    --text-color: #fff;
+    --hover-color: #555;
+    --font-family: 'Open Sans', sans-serif;
+    --footer-height: 60px;
+}
+
+/* Importing a Custom Font */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+main .container{
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    padding-bottom:calc(var(--footer-height) + 15px) ;
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6; /* Improving readability */
+}
+
+header, footer {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto; /* Center the container */
+    display: flex; /* Flexbox for internal alignment */
+    flex-wrap: wrap; /* Wrap items if not enough space */
+    justify-content: space-between; /* Space between header text and image */
+}
+
+.text-container, .image-container {
+    flex: 1; /* Flex grow */
+    margin: 10px; /* Added some space around */
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px; /* Rounded corners for images */
+}
+
+nav {
+    background-color: var(--secondary-color);
+    padding: 10px 0;
+    display: flex; /* This line tells the container to use Flexbox */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    flex-wrap: wrap; /* Allows items to wrap to a new line on smaller screens */
+}
+
+nav ul {
+    display: flex; /* Ensures list items are displayed in a row */
+    padding: 0;
+    list-style: none; /* Removes default list styling */
+    margin: 0; /* Removes default margin */
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 10px 20px; /* Adjust padding as needed to fit all items on one row */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+nav a:hover {
+    background-color: var(--hover-color);
+}
+
+section {
+    padding: 20px;
+    overflow: auto;
+}
+
+/* Slider container */
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 600px; /* Adjust based on your preference */
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Container for slides */
+.slides {
+    display: flex;
+}
+
+/* Individual slide */
+.slide {
+    flex: 0 0 100%;
+    text-align: center;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+}
+
+/* Navigation buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 10;
+    border: none;
+}
+
+.next{
+    right: 0;
+}
+
+footer {
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: var(--footer-height);
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    .container, .text-container, .image-container {
+        width: 100%;
+        flex-direction: column; /* Stack items on small screens */
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    nav a {
+        display: block; /* Stack nav links */
+    }
+}
