@@ -136,6 +136,41 @@ footer {
     height: var(--footer-height);
 }
 
+.post {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.post-title {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.post-content {
+    line-height: 1.5;
+}
+
+.post-tags {
+    margin-top: 10px;
+}
+
+.tag {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    padding: 5px;
+    margin-right: 5px;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+.tag:hover {
+    background-color: var(--hover-color);
+}
+
 /* Responsive Design Adjustments */
 @media (max-width: 768px) {
     .container, .text-container, .image-container {
